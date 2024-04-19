@@ -1,0 +1,53 @@
+ /* Styles for form wrapper */
+ .form-wrapper {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Styles for input fields */
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Styles for radio buttons */
+.gender input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Styles for confirm box */
+.confirm_box {
+    margin-top: 10px;
+}
+
+.confirm_box label {
+    margin-left: 5px;
+}
+
+/* Styles for register button */
+.btn-sign {
+    background-color: #ff00ea;
+    color: #fff;
+    border: none;
+    width: 250px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-sign:hover {
+    background-color: #ad002b;
+}
