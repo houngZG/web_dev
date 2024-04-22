@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(214, 214, 214);
+}
+.header{
+    background-image: url('../electronic_shop/electronic_imgs/img1\(38\).jpg');
+    text-align: center;
+    color: aliceblue;
+    margin: 0px;
+}
+.menu ul{
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(5, 175, 254);
+}
+li{
+    float: left;
+}
+li a{
+    text-decoration: none;
+    display: block;
+    padding: 14px 16px;
+    color: aliceblue;
+    text-transform: uppercase;
+}
+li a:hover{
+    background-color: aliceblue;
+    color: rgb(0, 30, 255);
+    text-decoration: underline;
+}
+img{
+    max-width: 100%;
+}
+.row{
+    content: '';
+    clear: both;
+    display: table;
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*= "col-"]{
+    float: left;
+    padding: 15px;
+    background-color: aliceblue;
+    color: rgb(110, 104, 104)
+}
