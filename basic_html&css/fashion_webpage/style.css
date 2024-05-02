@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  .navbar {
+    width: 100%;
+    height: 80vh;
+    background-image: url("./images/product (26).jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; /* Center the background image */
+    margin: 0;
+  }
+  
+  .drop-down-menu {
+    background-color: #8576ff;
+    width: 100%;
+    padding: 15px;
+  }
+  
+  .drop-down-menu ul {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0;
+  }
+  
+  .drop-down-menu ul li {
+    position: relative;
+    list-style-type: none;
+    padding-right: 5%; /* Adjusted for responsiveness */
+    cursor: pointer; /* Add cursor pointer */
+  }
+  
+  .drop-down-menu ul li:last-child {
+    padding-right: 0;
+  }
+  
+  .drop-down-menu ul li a {
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .drop-down-menu ul li:hover .submenu {
+    display: block; /* Show submenu on hover */
+  }
+  
+  .drop-down-menu ul .submenu {
+    display: none;
+    position: absolute;
+    top: calc(100% - 2px); /* Adjusted submenu position */
+    left: 0;
+    width: 200px;
+    border-top: 2px solid #8576ff;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 0 0 5px 5px; /* Rounded bottom corners */
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .drop-down-menu ul .submenu li {
+    display: block;
+    padding: 8px 0;
+  }
+  
+  .drop-down-menu ul .submenu a {
+    color: #003C43;
+    font-size: 16px;
+  }
+  
+  
+  .man-zoon {
+    background-color: #b3c8cf;
+    text-align: center;
+    padding: 2rem;
+    color: white;
+    font-size: large;
+    font-weight: normal;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .women-zoon {
+    background-color: #a79277;
+  }
+  
+  .man-zoon {
+    background-color: #ffcbcb;
+  }
+  
+  .row .col-4 img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+  
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  [class*="col-"] {
+    float: left;
+    padding: 1%; /* Adjusted for responsiveness */
+    box-sizing: border-box; /* Added */
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navbar {
+        height: 50vh; /* Adjusted height for smaller screens */
+      }
+    .drop-down-menu ul li {
+      padding-right: 2%; /* Adjusted for responsiveness */
+    }
+  }
+  
