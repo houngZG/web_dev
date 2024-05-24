@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ly minhoung</title>
+  <link rel="stylesheet" href="../Personal_website/stlye.css">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script>
+    // Function to define property
+    function _defineProperty(obj, key, value) {
+      if (key in obj) {
+        Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });
+      } else {
+        obj[key] = value;
+      }
+      return obj;
+    }
+
+    // Menu Component
+    function Menu(props) {
+      return `
+        <div class="menu-container ${props.showMenu}">
+          <div class="overlay"></div>
+          <div class="menu-items">
+            <ul>
+              <li><a href="#welcome-section" onclick="${props.toggleMenu}">HOME</a></li>
+              <li><a href="#about" onclick="${props.toggleMenu}">ABOUT</a></li>
+              <li><a href="#projects" onclick="${props.toggleMenu}">PORTFOLIO</a></li>
+              <li><a href="#contact" onclick="${props.toggleMenu}">CONTACT</a></li>
+            </ul>
+            ${SocialLinks()}
+          </div>
+        </div>`;
+    }
+
+    // Nav Component
+    function Nav(props) {
+      return `
+        <nav id="navbar">
+          <div class="nav-wrapper">
+            <p class="brand">Pov<strong> Lyhoung</strong></p>
+            <a onclick="${props.toggleMenu}" class="${props.showMenu === 'active' ? 'menu-button active' : 'menu-button'}"><span></span></a>
+          </div>
+        </nav>`;
+    }
+
+    // Header Component
+    function Header() {
+      return `
+        <header id="welcome-section">
+          <div class="forest"></div>
+          <div class="silhouette"></div>
+          <div class="moon"></div>
+          <div class="container">
+            <h1>
+              <span class="line">I am</span>
+              <span class="line">graphic designer</span>
+              <span class="line"><span class="color">&</span> developer.</span>
+            </h1>
+            <div class="buttons">
+              <a href="#projects">Projects Background</a>
+              <a href="#contact" class="cta">get in touch</a>
+            </div>
+          </div>
+        </header>`;
+    }
+
+    // About Component
+    function About() {
+      return `
+        <section id="about">
+          <div class="wrapper">
+            <article>
+              <div class="title">
+                <h3>Who's this guy?</h3>
+                <p class="separator"></p>
+              </div>
+              <div class="desc full">
+                <h4 class="subtitle">My name is Lyhoung</h4>
+                <p>
+                  I am a developer and UX/UI designer based in the beautiful west coast of Spain, Galicia.
+                  I really enjoy solving problems as well as making things pretty and easy to use. I can't stop learning new things; the more, the better. I also love coding very much, a hobby I'm taking along since the good full stack developer.I have a passion for play game at the freetime!
+                </p>
+              </div>
+              <div class="title">
+                <h3>What does he do?</h3>
+                <p class="separator"></p>
+              </div>
+              <div class="desc">
+                <h4 class="subtitle">I'm a programmer and developer.</h4>
+                <p>
+                  For the front-end I usually work with java, either standalone or including popular frameworks like flutter & dart and boostrap. I also make the web pretty by using Sass, CSS and, whenever needed, any of their friends: Bootstrap, Bulma, etc.
+                  For the back-end I also work with laravel (NodeJS, Express, MongoDB, etc) and c# by using asp.netcore. But, of course, whenever the project requires PHP, I do PHP as well (Wordpress, Laravel, etc).
+                </p>
+              </div>
+              <div class="desc">
+                <h4 class="subtitle">Also a designer.</h4>
+                <p>
+                  I feel comfortable working with many Adobe products. Photoshop, InDesign, Lightroom or Xd are some kind of industry standards and I love working with them. I'm not limited to them, though: Gimp, Inkscape or Figma are also very valid applications that I've been working with.
+                  User interfaces, brochures, books, branding... You name it! As I mentioned, creating pretty things is particularly important for me.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>`;
+    }
+
+    function Projects() {
+        return `
+            <section id="projects">
+            <div class="wrapper">
+                <article>
+                    <div class="title">
+                        <h3>Some Things I've Built</h3>
+                        <p class="separator"></p>
+                    </div>
+                    <div class="projects-container">
+                        <div class="project-card">
+                            <img src="../Personal_website/solar.png" alt="Project 1" />
+                            <div class="project-desc">
+                                <h4>Solar roof web portal</h4>
+                                <p>The Solar roof website is the first website that allow all ervery client can request to installation the solar in their company or housing or somewhere they need to use solar roof.</p>
+                                <h6>@Solar roof => Check me! http://dc.oone.bz:50333/dashboard/solar</h6>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <img src="../Personal_website/eac.png" alt="Project 2" />
+                            <div class="project-desc">
+                                <h4>EAC App mobile application</h4>
+                                <p>The fist, mobile application make people easy to checkout their monthly using electricity by using EAC app and it has a lot of feature to use: like request new connection, request for continue the old connection or something else. </p>
+                                <h6>@EAC App  => Go to play store or app store to watch details</h6>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            </section>
+        `;
+    }
+
+    function Contact() {
+        return `
+        <section id="contact">
+  <div class="wrapper">
+    <div class="container">
+      <div class="title">
+        <h3>Get In Touch</h3>
+        <p class="separator"></p>
+      </div>
+      <form id="contact-form" action="#" method="post">
+        <div class="input-group">
+          <input type="text" id="name" name="name" required placeholder=" " />
+          <label for="name">Name</label>
+        </div>
+        <div class="input-group">
+          <input type="email" id="email" name="email" required placeholder=" " />
+          <label for="email">Email</label>
+        </div>
+        <div class="input-group">
+          <textarea id="message" name="message" rows="4" required placeholder=" "></textarea>
+          <label for="message">Your Message</label>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+        `;
+    }
+
+    function Footer() {
+        return `
+            <footer>
+                <div class="footer-top">
+                    <div class="footer-section">
+                        <p>Address:<br>Toul tompong, 468st, Phnom Penh, Cambodia</p>
+                    </div>
+                    <div class="footer-section">
+                        <p>Email:<br><a href="mailto:povlyhoung02@gmail.com">povlyhoung02@gmail.com</a></p>
+                    </div>
+                    <div class="footer-section">
+                        <p>Tell:<br>+885 89 826 667</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>Copyright © 2024 Student’s Norton.</p>
+                </div>
+            </footer>
+        `;
+    }
+
+    // Social Links Component
+    function SocialLinks() {
+      return `
+        <div class="social">
+          <a href="https://twitter.com/yagoestevez" target="_blank" rel="noopener noreferrer" title="Link to author's Twitter profile"><i class="fab fa-twitter"></i></a>
+          <a href="https://github.com/yagoestevez" target="_blank" rel="noopener noreferrer" title="Link to author's GitHub Profile"><i class="fab fa-github"></i></a>
+          <a href="https://codepen.io/yagoestevez" target="_blank" rel="noopener noreferrer" title="Link to author's Codepen Profile"><i class="fab fa-codepen"></i></a>
+        </div>`;
+    }
+
+    // Main Component
+    class App {
+      constructor() {
+        this.menuState = false;
+        this.toggleMenu = this.toggleMenu.bind(this);
+        this.render();
+      }
+
+      toggleMenu() {
+        this.menuState = !this.menuState;
+        document.getElementById('app').innerHTML = this.render();
+      }
+
+      render() {
+        return `
+          ${Menu({ toggleMenu: this.toggleMenu, showMenu: this.menuState ? 'active' : 'deactive' })}
+          ${Nav({ toggleMenu: this.toggleMenu, showMenu: this.menuState ? 'active' : 'deactive' })}
+          ${Header()}
+          ${About()}
+          ${Projects()}
+          
+          ${Footer()}
+          ${Contact()}
+         
+        `;
+      }
+    }
+
+    const app = new App();
+    document.getElementById('app').innerHTML = app.render();
+  </script>
+</body>
+</html>
